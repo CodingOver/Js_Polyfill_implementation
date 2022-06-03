@@ -6,11 +6,11 @@
 ![](https://img.shields.io/badge/rating-4.5%2F5-brightgreen)
 ![progress](https://progress-bar.dev/0/?title=Completed)
 
-In this series which i called **JS-PAI** **<mark>*JavaScript Polyfills And Implementation*</mark>**,I have seen 80% of the company is asking this hot topic. So before applying to the job interview you should have thorough understanding of polyfills.
+In this series which i called **JS-PAI** **<mark>*JavaScript Polyfills And Implementation*</mark>**, I have seen 80% of the companies are asking about this topic. So before applying to the job interview you should have thorough understanding of polyfills.
 
-But you might be thinking why companies are asking polyfills in interview process.
+But you might be thinking why companies are asking about polyfills in interview process.
 
-Because it cover lot of in-depth understanding of Js Concepts and fundamentals like loops, prototype, this, and understanding functions that is why interviwer is keen to know about polyfills
+Because it cover lot of in-depth understanding of Js Concepts and fundamentals like loops, prototype, this, and understanding functions that is why interviewer is keen to know about polyfills
 
 In this repo I will implment various built in function and methods in JavaScript. 
 

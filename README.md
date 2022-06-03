@@ -16,7 +16,7 @@ In this repo I will implment various built in function and methods in JavaScript
 
 
 ## Js Array Methods
-> [x] `Implmented`- Array.prototype.at()
+> - [x] `Implmented`- Array.prototype.at()
 
 - The **at()** methode take an integer value.
 - Return item of the index of the integer value
@@ -30,7 +30,7 @@ Array.prototype.myAt = function (val) {
     if (val < 0) {
 
         return this[this.length + val];
-        
+
     } else if (val >= 0) {
         return this[val]
     }

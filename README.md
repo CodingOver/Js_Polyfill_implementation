@@ -36,3 +36,24 @@ Array.prototype.myAt = function (val) {
     }
 }
 ```
+> - [x] `Implmented`- Array.prototype.concat()
+
+- The **concat()** methode is used to merge two or more arrays .
+- This method does not change the existing arrays.
+- The methode returns a new arrays.
+
+
+```JS
+Array.prototype.myConcat = function (...args) {
+    const result = [...this]
+    for (const i of args) {
+        if (Array.isArray(i)) {
+            result.push(...i)
+        } else {
+            result.push(i)
+        }
+    }
+
+    return result
+}
+```

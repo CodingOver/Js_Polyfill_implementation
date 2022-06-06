@@ -18,7 +18,7 @@ In this repo I will implment various built in function and methods in JavaScript
 ## Js Array Methods
 > - [x] `Implmented`- Array.prototype.at()
 
-- The **at()** methode take an integer value.
+- The **at()** method take an integer value.
 - Return item of the index of the integer value
 - Accept negative intergers count back from the last item in the array
 - Accept positive intergers count from the starting of the array
@@ -40,7 +40,7 @@ Array.prototype.myAt = function (val) {
 
 - The **concat()** methode is used to merge two or more arrays .
 - This method does not change the existing arrays.
-- The methode returns a new arrays.
+- The method returns a new arrays.
 
 
 ```JS
@@ -56,4 +56,62 @@ Array.prototype.myConcat = function (...args) {
 
     return result
 }
+```
+> - [x] `Implmented`- Array.prototype.copyWithin()
+
+- The **concat()** methode is used to copies array elements to another position in the array.
+- The method does not add items to the array
+- The method returns the same array without modifying its length.
+
+
+```JS
+Array.prototype.myCopyWithin = function (target, start/*, end*/) {
+
+    var O = Object(this);
+
+    var len = O.length >>> 0;
+
+    var relativeTarget = target >> 0;
+
+    var to = relativeTarget < 0 ?
+        Math.max(len + relativeTarget, 0) :
+        Math.min(relativeTarget, len);
+
+    var relativeStart = start >> 0;
+
+    var from = relativeStart < 0 ?
+        Math.max(len + relativeStart, 0) :
+        Math.min(relativeStart, len);
+
+    var end = arguments[2];
+    var relativeEnd = end === undefined ? len : end >> 0;
+
+    var final = relativeEnd < 0 ?
+        Math.max(len + relativeEnd, 0) :
+        Math.min(relativeEnd, len);
+
+    var count = Math.min(final - from, len - to);
+
+    var direction = 1;
+
+    if (from < to && to < (from + count)) {
+        direction = -1;
+        from += count - 1;
+        to += count - 1;
+    }
+
+    while (count > 0) {
+        if (from in O) {
+            O[to] = O[from];
+        } else {
+            delete O[to];
+        }
+
+        from += direction;
+        to += direction;
+        count--;
+    }
+
+    return O;
+};
 ```

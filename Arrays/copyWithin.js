@@ -51,20 +51,11 @@ Array.prototype.myCopyWithin = function (target, start/*, end*/) {
         count--;
     }
 
-    return O;
+    return this;
 };
 
+const array1 = ['a', 'b', 'c', 'd', 'e'];
 
 
 
-// [1, 2, 3, 4, 5].copyWithin(-2);
-// // [1, 2, 3, 1, 2]
-
-// [1, 2, 3, 4, 5].copyWithin(0, 3);
-// // [4, 5, 3, 4, 5]
-
-// [1, 2, 3, 4, 5].copyWithin(0, 3, 4);
-// // [4, 2, 3, 4, 5]
-
-// [1, 2, 3, 4, 5].copyWithin(-2, -3, -1);
-// // [1, 2, 3, 3, 4]
+console.log(array1.myCopyWithin(0, 3, 4)); //['d', 'b', 'c', 'd', 'e']

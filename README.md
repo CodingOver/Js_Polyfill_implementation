@@ -59,7 +59,7 @@ Array.prototype.myConcat = function (...args) {
 ```
 > - [x] `Implmented`- Array.prototype.copyWithin()
 
-- The **concat()** methode is used to copies array elements to another position in the array.
+- The **copyWithin()** methode is used to copies array elements to another position in the array.
 - The method does not add items to the array
 - The method returns the same array without modifying its length.
 
@@ -114,4 +114,36 @@ Array.prototype.myCopyWithin = function (target, start/*, end*/) {
 
     return O;
 };
+```
+
+
+> - [x] `Implmented`- Array.prototype.fill()
+
+- The **fill()** methode chnages all elemetns in an array to a static value, from a start index (default **0**) to an end index (default **array.length**)
+- The method returns the modified array.
+- start and end position an be specified. if not, all elements will be filled
+
+```Js
+Array.prototype.myFill = function (value) {
+
+    let obj = Object(this)
+
+    let len = obj.length >>> 0
+
+    let start = arguments[1];
+    let relativeStart = start >> 0;
+
+    let k = relativeStart < 0 ? Math.max(len + relativeStart, 0) : Math.min(len, relativeStart)
+
+    let end = arguments[2];
+    let relativeEnd = end === undefined ? len : end >> 0;
+
+    let final = relativeEnd < 0 ? Math.max(len + relativeEnd, 0) : Math.min(len, relativeEnd);
+
+    while (k < final) {
+        obj[k] = value;
+        k++
+    }
+    return this
+}
 ```

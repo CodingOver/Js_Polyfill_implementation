@@ -272,3 +272,19 @@ Array.prototype.myFilter = function (callback, context) {
     return arr;
 }
 ```
+
+> - [x] `implemented` - Array.prototype.filter()
+
+- The **filter()** Method create a new array with all elements that pass the test implemented by the provided function.
+
+- The method return value as a new array with elements that pass the test. If no elements pass the test, an empty array will be returned
+
+```Js
+Array.prototype.myMap = function (callback) {
+    let arr = []
+    for (let i = 0; i < this.length; i++) {
+        arr.push(callback(this[i], i, this))
+    }
+    return arr
+}
+```

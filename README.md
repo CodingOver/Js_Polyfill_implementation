@@ -16,7 +16,7 @@ In this repo I will implment various built in function and methods in JavaScript
 
 
 ## Js Array Methods
-> - [x] `Implmented`- Array.prototype.at()
+> - [x] `implemented`- Array.prototype.at()
 
 - The **at()** method take an integer value.
 - Return item of the index of the integer value
@@ -36,9 +36,9 @@ Array.prototype.myAt = function (val) {
     }
 }
 ```
-> - [x] `Implmented`- Array.prototype.concat()
+> - [x] `implemented`- Array.prototype.concat()
 
-- The **concat()** methode is used to merge two or more arrays .
+- The **concat()** Method is used to merge two or more arrays .
 - This method does not change the existing arrays.
 - The method returns a new arrays.
 
@@ -57,9 +57,9 @@ Array.prototype.myConcat = function (...args) {
     return result
 }
 ```
-> - [x] `Implmented`- Array.prototype.copyWithin()
+> - [x] `implemented`- Array.prototype.copyWithin()
 
-- The **copyWithin()** methode is used to copies array elements to another position in the array.
+- The **copyWithin()** Method is used to copies array elements to another position in the array.
 - The method does not add items to the array
 - The method returns the same array without modifying its length.
 
@@ -117,9 +117,9 @@ Array.prototype.myCopyWithin = function (target, start/*, end*/) {
 ```
 
 
-> - [x] `Implmented`- Array.prototype.fill()
+> - [x] `implemented`- Array.prototype.fill()
 
-- The **fill()** methode chnages all elemetns in an array to a static value, from a start index (default **0**) to an end index (default **array.length**)
+- The **fill()** Method chnages all elemetns in an array to a static value, from a start index (default **0**) to an end index (default **array.length**)
 - The method returns the modified array.
 - start and end position an be specified. if not, all elements will be filled
 
@@ -148,9 +148,9 @@ Array.prototype.myFill = function (value) {
 }
 ```
 
-> - [x] `Implmented`- Array.prototype.entries()
+> - [x] `implemented`- Array.prototype.entries()
 
-- The **entries()** methode return a new **Array Iterator** object that contains the key+value pairs for each index in the array.
+- The **entries()** Method return a new **Array Iterator** object that contains the key+value pairs for each index in the array.
 - You need to store the **array.entries()** in a variable to use it for iteration
 
 ```Js
@@ -184,9 +184,9 @@ Array.prototype.myEntries = function () {
 }
 ```
 
-> - [x] `Implmented`- Array.prototype.values()
+> - [x] `implemented`- Array.prototype.values()
 
-- The **values()** methode return a new **Array Iterator** object that contains the values for each index in the array.
+- The **values()** Method return a new **Array Iterator** object that contains the values for each index in the array.
 
 ```Js
 function ArrayIterator(array, kind) {
@@ -219,9 +219,9 @@ Array.prototype.myValues = function () {
 }
 ```
 
-> - [x] `Implmented`- Array.prototype.keys()
+> - [x] `implemented`- Array.prototype.keys()
 
-- The **keys()** methode return a new **Array Iterator** object that contains the keys for each index in the array.
+- The **keys()** Method return a new **Array Iterator** object that contains the keys for each index in the array.
 
 ```Js
 function ArrayIterator(array, kind) {
@@ -251,5 +251,24 @@ ArrayIterator.prototype.next = function () {
 
 Array.prototype.myKeys = function () {
     return new ArrayIterator(this, 'key')
+}
+```
+
+> - [x] `implemented` - Array.prototype.filter()
+
+- The **filter()** Method create a new array with all elements that pass the test implemented by the provided function.
+
+- The method return value as a new array with elements that pass the test. If no elements pass the test, an empty array will be returned
+
+```Js
+Array.prototype.myFilter = function (callback, context) {
+    let arr = [];
+    for (let i = 0; i < this.length; i++) {
+        if (callback.call(context, this[i], i, this)) {
+            arr.push(this[i])
+        }
+    }
+
+    return arr;
 }
 ```

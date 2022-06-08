@@ -273,11 +273,27 @@ Array.prototype.myFilter = function (callback, context) {
 }
 ```
 
-> - [x] `implemented` - Array.prototype.filter()
+> - [x] `implemented` - Array.prototype.map()
 
-- The **filter()** Method create a new array populated with the results of calling a provided function on every element in the calling array.
+- The **map()** Method create a new array populated with the results of calling a provided function on every element in the calling array.
 
 - The method return value as a new array with each element being the result of the callback function.
+
+```Js
+Array.prototype.myMap = function (callback) {
+    let arr = []
+    for (let i = 0; i < this.length; i++) {
+        arr.push(callback(this[i], i, this))
+    }
+    return arr
+}
+```
+
+> - [x] `implemented` - Array.prototype.forEach()
+
+- The **forEach()** Method executes a provided function once for each array element.
+
+- The method return value of **undefined**.
 
 ```Js
 Array.prototype.myMap = function (callback) {

@@ -147,3 +147,109 @@ Array.prototype.myFill = function (value) {
     return this
 }
 ```
+
+> - [x] `Implmented`- Array.prototype.entries()
+
+- The **entries()** methode return a new **Array Iterator** object that contains the key+value pairs for each index in the array.
+- You need to store the **array.entries()** in a variable to use it for iteration
+
+```Js
+function ArrayIterator(array, kind) {
+    this.array = array;
+    this.kind = kind;
+    this.nextIndex = 0;
+}
+
+ArrayIterator.prototype.next = function () {
+    var currentIndex = this.nextIndex;
+
+    if (currentIndex >= this.array.length) {
+        return { 'value': undefined, "done": true }
+    }
+
+    this.nextIndex++
+
+
+    if (this.kind === 'key+value') {
+        return {
+            'value': [currentIndex, this.array[currentIndex]],
+            'done': false
+        };
+    };
+
+};
+
+Array.prototype.myEntries = function () {
+    return new ArrayIterator(this, 'key+value')
+}
+```
+
+> - [x] `Implmented`- Array.prototype.values()
+
+- The **values()** methode return a new **Array Iterator** object that contains the values for each index in the array.
+
+```Js
+function ArrayIterator(array, kind) {
+    this.array = array;
+    this.kind = kind;
+    this.nextIndex = 0;
+}
+
+ArrayIterator.prototype.next = function () {
+    var currentIndex = this.nextIndex;
+
+    if (currentIndex >= this.array.length) {
+        return { 'value': undefined, "done": true }
+    }
+
+    this.nextIndex++
+
+
+    if (this.kind === 'value') {
+        return {
+            'value': this.array[currentIndex],
+            'done': false
+        };
+    };
+
+};
+
+Array.prototype.myValues = function () {
+    return new ArrayIterator(this, 'value')
+}
+```
+
+> - [x] `Implmented`- Array.prototype.keys()
+
+- The **keys()** methode return a new **Array Iterator** object that contains the keys for each index in the array.
+
+```Js
+function ArrayIterator(array, kind) {
+    this.array = array;
+    this.kind = kind;
+    this.nextIndex = 0;
+}
+
+ArrayIterator.prototype.next = function () {
+    var currentIndex = this.nextIndex;
+
+    if (currentIndex >= this.array.length) {
+        return { 'value': undefined, "done": true }
+    }
+
+    this.nextIndex++
+
+
+    if (this.kind === 'key') {
+        return {
+            'value': currentIndex,
+            'done': false
+        };
+    };
+
+};
+
+Array.prototype.myKeys = function () {
+    return new ArrayIterator(this, 'key')
+}
+```

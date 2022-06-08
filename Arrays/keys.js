@@ -28,12 +28,12 @@ Array.prototype.myKeys = function () {
 }
 
 
-let arr = [1, 2, 3, 4];
+// let arr = [1, 2, 3, 4];
 
-let iterator = arr.myKeys();
+// let iterator = arr.myKeys();
 
 
-console.log(iterator)
+// console.log(iterator.next().value)
 // console.log(iterator.next().value)
 // console.log(iterator.next().value)
 // console.log(iterator.next().value)
